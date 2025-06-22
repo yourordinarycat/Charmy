@@ -18,6 +18,15 @@ namespace winrt::HotCorner::Uwp::Controls::implementation {
 		}
 	};
 
+	static void OnLayoutPropertyChanged(
+		const wux::DependencyObject& sender,
+		const wux::DependencyPropertyChangedEventArgs&)
+	{
+		const auto elm = sender.as<Controls::WrapPanel>();
+		elm.InvalidateMeasure();
+		elm.InvalidateArrange();
+	}
+
 	/**
 	 * @brief Positions child elements sequentially from left to right or top to bottom.
 	 *        When elements extend beyond the container edge, they are positioned in the
@@ -30,13 +39,40 @@ namespace winrt::HotCorner::Uwp::Controls::implementation {
 		Windows::Foundation::Size MeasureOverride(Windows::Foundation::Size);
 		Windows::Foundation::Size ArrangeOverride(Windows::Foundation::Size);
 
-		static void EnsureProperties();
+		DEPENDENCY_PROPERTY_META(
+			Orientation,
+			wuxc::Orientation,
+			box_value(wuxc::Orientation::Horizontal),
+			OnLayoutPropertyChanged
+		);
 
-		DEPENDENCY_PROPERTY_API(Orientation, wuxc::Orientation);
-		DEPENDENCY_PROPERTY_API(ItemWidth, double);
-		DEPENDENCY_PROPERTY_API(ItemHeight, double);
-		DEPENDENCY_PROPERTY_API(HorizontalSpacing, double);
-		DEPENDENCY_PROPERTY_API(VerticalSpacing, double);
+		DEPENDENCY_PROPERTY_META(
+			ItemWidth,
+			double,
+			box_value(std::numeric_limits<double>::quiet_NaN()),
+			OnLayoutPropertyChanged
+		);
+
+		DEPENDENCY_PROPERTY_META(
+			ItemHeight,
+			double,
+			box_value(std::numeric_limits<double>::quiet_NaN()),
+			OnLayoutPropertyChanged
+		);
+
+		DEPENDENCY_PROPERTY_META(
+			HorizontalSpacing,
+			double,
+			box_value(0.0),
+			OnLayoutPropertyChanged
+		);
+
+		DEPENDENCY_PROPERTY_META(
+			VerticalSpacing,
+			double,
+			box_value(0.0),
+			OnLayoutPropertyChanged
+		);
 
 	private:
 		std::vector<UIElementGroup> m_groups;

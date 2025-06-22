@@ -14,10 +14,19 @@ namespace winrt::HotCorner::Uwp::Controls::implementation {
 		Windows::Foundation::Size MeasureOverride(Windows::Foundation::Size);
 		Windows::Foundation::Size ArrangeOverride(Windows::Foundation::Size) const;
 
-		static void EnsureProperties();
+		DEPENDENCY_PROPERTY_META(
+			Orientation,
+			wuxc::Orientation,
+			box_value(wuxc::Orientation::Vertical),
+			nullptr
+		);
 
-		DEPENDENCY_PROPERTY_API(Orientation, wuxc::Orientation);
-		DEPENDENCY_PROPERTY_API(Spacing, double);
+		DEPENDENCY_PROPERTY_META(
+			Spacing,
+			double,
+			box_value(0.0),
+			nullptr
+		);
 
 	private:
 		Windows::Foundation::Size m_maxSize{};

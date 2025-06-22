@@ -10,8 +10,6 @@ namespace winrt::HotCorner::Uwp::implementation {
 		*/
 		App() {}
 
-		void InitializeComponent();
-
 		/**
 		 * @brief Invoked when the application is launched normally by the end user.
 		 *

@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef USE_WINUI3
+#if __has_include("winrt/Microsoft.UI.h")
 #define XAML Microsoft.UI.Xaml
 #else
 #define XAML Windows.UI.Xaml

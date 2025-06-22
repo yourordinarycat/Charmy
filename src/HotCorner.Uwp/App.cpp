@@ -24,11 +24,6 @@ namespace winrt::HotCorner::Uwp::implementation {
 	// 4:3 aspect ratio <3
 	static constexpr wf::Size MainViewSize{ 500, 375 };
 
-	void App::InitializeComponent() {
-		Controls::implementation::EvenStackPanel::EnsureProperties();
-		Controls::implementation::WrapPanel::EnsureProperties();
-	}
-
 	void App::OnLaunched(const wama::LaunchActivatedEventArgs&) const {
 		const auto view = wuvm::ApplicationView::GetForCurrentView();
 		view.SetPreferredMinSize(MainViewSize);

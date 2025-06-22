@@ -55,7 +55,7 @@ public: \
 		SetValue(m_##NAME##Property, winrt::box_value(value)); \
 	} \
 private: \
-	inline static xaml::DependencyProperty m_##NAME##Property = nullptr
+	inline static xaml::DependencyProperty m_##NAME##Property
 
 // Defines the public API for an attached property.
 #define ATTACHED_PROPERTY_API(NAME, TYPE, TARGET) \
@@ -70,7 +70,7 @@ public: \
 		target.SetValue(m_##NAME##Property, winrt::box_value(value)); \
 	} \
 private: \
-	inline static xaml::DependencyProperty m_##NAME##Property = nullptr
+	inline static xaml::DependencyProperty m_##NAME##Property
 
 // Base macro for DependencyProperty registration.
 // Do not use in authored code.
@@ -85,12 +85,11 @@ xaml::DependencyProperty::METHOD \
 
 // Defines a dependency property for a WinRT class.
 #define REGISTER_DEPENDENCY_PROPERTY(NAME, TYPE) \
-m_##NAME##Property = \
-	__REGISTER_DEPENDENCY_PROPERTY(Register, NAME, TYPE, nullptr)
+__REGISTER_DEPENDENCY_PROPERTY(Register, NAME, TYPE, nullptr)
 
 // Defines a dependency property with property metadata for a WinRT class.
 #define REGISTER_DEPENDENCY_PROPERTY_META(NAME, TYPE, VALUE, CHANGE_HANDLER) \
-m_##NAME##Property = __REGISTER_DEPENDENCY_PROPERTY \
+__REGISTER_DEPENDENCY_PROPERTY \
 ( \
 	Register, \
 	NAME, \
@@ -100,18 +99,29 @@ m_##NAME##Property = __REGISTER_DEPENDENCY_PROPERTY \
 
 // Defines an attached property for a WinRT class.
 #define REGISTER_ATTACHED_PROPERTY(NAME, TYPE) \
-m_##NAME##Property = \
-	__REGISTER_DEPENDENCY_PROPERTY(RegisterAttached, NAME, TYPE, nullptr)
+__REGISTER_DEPENDENCY_PROPERTY(RegisterAttached, NAME, TYPE, nullptr)
 
 // Defines an attached property with property metadata for a WinRT class.
 #define REGISTER_ATTACHED_PROPERTY_META(NAME, TYPE, VALUE, CHANGE_HANDLER) \
-m_##NAME##Property = __REGISTER_DEPENDENCY_PROPERTY \
+__REGISTER_DEPENDENCY_PROPERTY \
 ( \
 	RegisterAttached, \
 	NAME, \
 	TYPE, \
 	__DEPENDENCY_PROPERTY_METADATA(VALUE, CHANGE_HANDLER) \
 )
+
+#define DEPENDENCY_PROPERTY(NAME, TYPE) \
+DEPENDENCY_PROPERTY_API(NAME, TYPE) = REGISTER_DEPENDENCY_PROPERTY(NAME, TYPE)
+
+#define ATTACHED_PROPERTY(NAME, TYPE, VALUE, CHANGE_HANDLER) \
+ATTACHED_PROPERTY_API(NAME, TYPE) = REGISTER_ATTACHED_PROPERTY(NAME, TYPE)
+
+#define DEPENDENCY_PROPERTY_META(NAME, TYPE, VALUE, CHANGE_HANDLER) \
+DEPENDENCY_PROPERTY_API(NAME, TYPE) = REGISTER_DEPENDENCY_PROPERTY_META(NAME, TYPE, VALUE, CHANGE_HANDLER)
+
+#define ATTACHED_PROPERTY_META(NAME, TYPE, VALUE, CHANGE_HANDLER) \
+ATTACHED_PROPERTY_API(NAME, TYPE) = REGISTER_ATTACHED_PROPERTY_META(NAME, TYPE, VALUE, CHANGE_HANDLER)
 
 namespace winrt {
 	namespace Microsoft::UI::Xaml {
