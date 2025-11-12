@@ -1,0 +1,20 @@
+<Solution>
+  <Configurations>
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path="src/.editorconfig" />
+    <File Path="src/Settings.XamlStyler" />
+    <File Path="src/VcxCommon.props" />
+  </Folder>
+  <Project Path="src/HotCorner.Package/HotCorner.Package.wapproj" Type="c7167f0d-bc9f-4e6e-afe1-012c56b48db5">
+    <Deploy />
+  </Project>
+  <Project Path="src/HotCorner.Server/HotCorner.Server.vcxproj" Id="f04c1766-757f-403a-997e-094656d940bb" />
+  <Project Path="src/HotCorner.Shared/HotCorner.Shared.vcxitems" Id="0427e93f-d8ee-4964-a0d3-7dfa0573a57c" />
+  <Project Path="src/HotCorner.Uwp/HotCorner.Uwp.vcxproj" Id="f94dab0c-b5ef-46dc-8872-4abba5f2a857">
+    <BuildDependency Project="src/HotCorner.Server/HotCorner.Server.vcxproj" />
+  </Project>
+</Solution>
