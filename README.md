@@ -26,7 +26,7 @@ A lightweight, user-friendly utility that adds customizable hot corners to your 
 
 ## License
 
-Charmy is [free software](https://www.gnu.org/philosophy/free-sw.html) licensed under the GPLv3 - you may take a look at the license [here](https://github.com/YourOrdinaryCat/Charmy/blob/9b363da5f930142223c5e6ff807a38803624acb4/LICENSE.txt).
+Charmy is [free software](https://www.gnu.org/philosophy/free-sw.html) licensed under the GPLv3 - you may take a look at the license [here](https://github.com/yourordinarycat/Charmy/blob/9b363da5f930142223c5e6ff807a38803624acb4/LICENSE.txt).
 
 ## Privacy
 
@@ -34,7 +34,7 @@ Charmy (listed in the Microsoft Store as "Charmy: Hot Corners for Windows") won'
 
 You may disable those log files by opening the app, going to "About > Log verbosity", and picking "Off". This will not delete previously generated logs - you may visit the folder storing them by opening the app, clicking on "About", and clicking the "Open logs folder" button.
 
-Additionally, if Charmy crashes, and was installed from the Microsoft Store, the developer (YourOrdinaryCat) might get anonymized information that may include:
+Additionally, if Charmy crashes, and was installed from the Microsoft Store, the developer (yourordinarycat) might get anonymized information that may include:
 
 - Stack trace
 - System specs

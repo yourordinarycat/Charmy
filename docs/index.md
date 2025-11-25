@@ -21,7 +21,7 @@ A lightweight, user-friendly utility that adds customizable hot corners to your 
 
 ## License
 
-Charmy is [free software](https://www.gnu.org/philosophy/free-sw.html) licensed under the GPLv3 - you may take a look at the license [here](https://github.com/YourOrdinaryCat/Charmy/blob/9b363da5f930142223c5e6ff807a38803624acb4/LICENSE.txt).
+Charmy is [free software](https://www.gnu.org/philosophy/free-sw.html) licensed under the GPLv3 - you may take a look at the license [here](https://github.com/yourordinarycat/Charmy/blob/9b363da5f930142223c5e6ff807a38803624acb4/LICENSE.txt).
 
 ## Privacy
 
