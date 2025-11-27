@@ -14,7 +14,10 @@ layout: compress
     content="Una utilidad liviana para añadir esquinas activas personalizables a tu computadora. Diseño moderno, ajustes por monitor, muchas acciones, totalmente gratis.">
   <meta name="keywords"
     content="esquinas activas, esquina activa, monitor, esquina caliente, punto caliente, esquinas calientes">
-  <link href="{{ '/assets/css/home.jekyll.css' | relative_url }}" rel="stylesheet">
+
+  <link rel="preload" href="{{ '/assets/css/home.jekyll.css' | relative_url }}" as="style">
+  <link rel="stylesheet" href="{{ '/assets/css/home.jekyll.css' | relative_url }}">
+
   <link rel="icon" type="image/png" href="{{ '/assets/favicons/favicon-96x96.png' | relative_url }}" sizes="96x96">
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicons/favicon.svg' | relative_url }}">
   <link rel="shortcut icon" href="{{ '/assets/favicons/favicon.ico' | relative_url }}">
