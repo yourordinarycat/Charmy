@@ -21,7 +21,7 @@ Una utilidad simple y liviana que añade esquinas activas personalizables a tu c
 
 ## Licencia
 
-Charmy es [software libre](https://www.gnu.org/philosophy/free-sw.es.html) licenciado bajo GPLv3 - mira la licencia [aquí](https://github.com/yourordinarycat/Charmy/blob/9b363da5f930142223c5e6ff807a38803624acb4/LICENSE.txt), o su [traducción (no oficial) al español](https://lslspanish.github.io/translation_GPLv3_to_spanish/).
+Charmy es [software libre](https://www.gnu.org/philosophy/free-sw.es.html) licenciado bajo GPLv3 - sigue el enlace para ver una copia de [la licencia](https://github.com/yourordinarycat/Charmy/blob/9b363da5f930142223c5e6ff807a38803624acb4/LICENSE.txt), o su [traducción (no oficial) al español](https://lslspanish.github.io/translation_GPLv3_to_spanish/).
 
 ## Privacidad
 
