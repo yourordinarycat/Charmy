@@ -28,18 +28,35 @@ layout: compress
     <article>
       <ul class="tcg bp-880" style="min-height: 50vh;">
         <li middlealign leftalign text-leftalign bp-880>
-          <img leftalign bp-880 loading="lazy" src="{{ '/assets/logo-44.png' | relative_url }}">
+          <img leftalign bp-880 loading="lazy"
+            srcset="https://media.getcharmy.com/cdn-cgi/image/width=64/logo.png 1x, https://media.getcharmy.com/cdn-cgi/image/width=128/logo.png 2x, https://media.getcharmy.com/cdn-cgi/image/width=192/logo.png 3x, https://media.getcharmy.com/logo.png 4x"
+            src="https://media.getcharmy.com/logo.png" alt="Logo de Charmy">
 
           <h1>Charmy</h1>
           <p>Esquinas Activas para Windows</p>
 
           <a href="https://apps.microsoft.com/detail/9p5pk6tvqxf7?cid=CharmyWebsite&mode=direct">
-            <img loading="lazy" src="https://get.microsoft.com/images/es%20dark.svg" width="200">
+            <picture>
+              <source srcset="https://get.microsoft.com/images/es%20light.svg" media="(prefers-color-scheme: light)">
+              <source srcset="https://get.microsoft.com/images/es%20dark.svg" media="(prefers-color-scheme: dark)">
+
+              <img loading="lazy" src="https://get.microsoft.com/images/es%20light.svg" alt="Microsoft Store app badge"
+                width="200">
+            </picture>
           </a>
         </li>
 
         <li middlealign rightalign bp-880>
-          <img cover window src="{{ '/assets/ss-light.jpg' | relative_url }}">
+          <picture>
+            <source
+              srcset="https://media.getcharmy.com/cdn-cgi/image/width=500/es/mainwindow-light.png 1x, https://media.getcharmy.com/cdn-cgi/image/width=1000/es/mainwindow-light.png 2x, https://media.getcharmy.com/es/mainwindow-light.png 3x"
+              media="(prefers-color-scheme: light)">
+            <source
+              srcset="https://media.getcharmy.com/cdn-cgi/image/width=500/es/mainwindow-dark.png 1x, https://media.getcharmy.com/cdn-cgi/image/width=1000/es/mainwindow-dark.png 2x, https://media.getcharmy.com/es/mainwindow-dark.png 3x"
+              media="(prefers-color-scheme: dark)">
+
+            <img cover window src="https://media.getcharmy.com/es/mainwindow-light.png" alt="Captura de la ventana de configuración de Charmy">
+          </picture>
         </li>
       </ul>
 
@@ -59,7 +76,7 @@ layout: compress
     <br>
 
     <p class="secondary" text-centeralign>
-      ¿Quieres donar? <a href="https://ko-fi.com/yourordinarycat">Ko-fi</a>
+      ¿Quieres donar? <a href="https://ko-fi.com/yourordinarycat" hreflang="en">Ko-fi</a>
     </p>
   </footer>
 </body>
